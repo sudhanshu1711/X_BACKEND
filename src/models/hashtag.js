@@ -1,7 +1,7 @@
 const { default: mongoose } = require('mongoose')
 const monogoose = require('mongoose')
 
-const hashtagSchema = new mongoose.schema({
+const hashtagSchema = new mongoose.Schema({
     title:{
         type:String,
         required:true
