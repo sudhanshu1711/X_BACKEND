@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const {MONGODB_URI} = require('./configFile.js')
 const connect = async () => {
   try {
-    await mongoose.connect('mongodb+srv://shubham:Ayachi%401711@cluster0.bp9s31i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+    await mongoose.connect(MONGODB_URI);
     console.log('Database connected successfully')
   } catch (err) {
     console.error('MongoDB connection failed:', err.message);
