@@ -29,5 +29,9 @@ class TweetService {
 
     return tweet;
 }
+async get (tweetId){
+   const tweet = await this.tweetrepo.getWithComments(tweetId)
+   return tweet
+}
 }
 module.exports = TweetService
