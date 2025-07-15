@@ -2,8 +2,6 @@ const express = require('express')
 const connect = require('./config/database.js')
 const APIRoutes = require('./routes/index.js')
 const bodyParser = require('body-parser')
-const {UserRepo,TweetRepo} = require('./repository/index.js')
-const LikeService = require('./services/like-service.js')
 const app = express()
 
 app.use(bodyParser.json())

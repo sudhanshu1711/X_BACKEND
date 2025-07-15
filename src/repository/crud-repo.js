@@ -7,7 +7,7 @@ class crudRepo{
             const result = await this.model.create(data)
             return result
         } catch (error) {
-            console.log('something went wrong in the repo layer')
+            console.log('something went wrong in the repo layer',error)
             throw error
         }
     }

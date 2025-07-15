@@ -1,16 +1,17 @@
-const {LikeRepo,TweetRepo} = require('../repository/index.js')
+const {LikeRepo,TweetRepo,CommentRepo} = require('../repository/index.js')
 
 class LikeService{
     constructor(){
         this.likeRepo= new LikeRepo()
         this.tweetRepo = new TweetRepo()
+        this.commentRepo = new CommentRepo()
     }
     async toggleLike(modelId,modelType,userId){
       if(modelType=='Tweet'){
         var likeable = await this.tweetRepo.find(modelId)
       }
       else if(modelType=='Comment'){
-
+        var likeable = await this.commentRepo.get(modelId)
       }
       else{
        throw new Error('Unknown model type')
